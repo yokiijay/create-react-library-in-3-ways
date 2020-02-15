@@ -1,15 +1,16 @@
 {
   "name": "my-react-library",
   "version": "1.0.0",
-  "main": "./lib/bundle.js",
+  "main": "./lib/index.js",
   "author": "Yokiijay <yokiijay@gmail.com> (https://yokiijay.github.io)",
   "license": "MIT",
   "scripts": {
-    "build": "yarn run webpack",
-    "start": "yarn run webpack -w"
+    "build": "yarn run babel src -d lib",
+    "start": "yarn run babel src -d lib -w"
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
+    "framer-motion": "^1.8.4",
     "react": "^16.12.0"
   },
   "devDependencies": {
@@ -19,12 +20,6 @@
     "@babel/preset-react": "^7.8.3",
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@rollup/plugin-json": "^4.0.2",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-emotion": "^10.0.27",
-    "rollup": "^1.31.1",
-    "rollup-plugin-babel": "^4.3.3",
-    "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11",
-    "webpack-node-externals": "^1.7.2"
+    "babel-preset-minify": "^0.5.1"
   }
 }
