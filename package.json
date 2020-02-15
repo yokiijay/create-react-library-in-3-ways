@@ -5,7 +5,8 @@
   "author": "Yokiijay <yokiijay@gmail.com> (https://yokiijay.github.io)",
   "license": "MIT",
   "scripts": {
-    "build": "yarn run rollup -c"
+    "build": "yarn run rollup -c",
+    "start": "yarn run rollup -c -w"
   },
   "dependencies": {
     "@emotion/core": "^10.0.27"
