@@ -19,27 +19,36 @@ This branch has been implemented with webpack way, download it and cd in run `ya
 
 `yarn add react @emotion/core`
 
-`yarn add rollup rollup-plugin-babel @babel/core @babel/preset-env @babel/preset-react @emotion/babel-preset-css-prop -D`
+`yarn add webpack webpack-cli babel-lodaer @babel/core @babel/preset-env @babel/preset-react @emotion/babel-preset-css-prop -D`
 > `@emotion/babel-preset-css-prop` is a babel preset we gonna use it later.
 
-## 3.rollup.config.js
+## 3.webpack.config.js
 create `rollup.config.js`
-```js
-import babel from 'rollup-plugin-babel'
 
-export default {
-  input: 'src/index.js',
+```js
+const path = require('path')
+const nodeExternals = require('webpack-node-externals') // exclude 3rd libraries from bundle with
+
+module.exports = {
+  mode: 'production',
+  entry: './src/index.js',
   output: {
-    file: './lib/bundle.js', // should be the same as main in package.json
-    format: 'cjs'
+    path: path.join(__dirname, 'lib'),
+    filename: 'bundle.js',
+    libraryTarget: 'commonjs2',
+    // libraryTarget: 'umd',
+    // globalObject: 'this'
   },
-  plugins: [
-    // parse es6 react and emotion syntax
-    babel({
-      exclude: 'node_modules/**'
-    })
-  ],
-  external: ['react', '@emotion/core'] // exclude 3rd libraries to bundle with
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }
+    ]
+  },
+  externals: [nodeExternals()],
 }
 ```
 
@@ -49,8 +58,8 @@ edit `package.json`
   "main": "./lib/bundle.js",
 ...
   "scripts": {
-    "build": "yarn run rollup -c",
-    "start": "yarn run rollup -c -w"
+    "build": "yarn run webpack",
+    "start": "yarn run webpack -w"
   },
 ```
 
