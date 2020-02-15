@@ -1,6 +1,6 @@
 # Create react library in 3 ways
 
-<img width='400px' style="margin: auto;" src='https://i.postimg.cc/YqTxYqSt/7-9-i-Pad-mini.png' />
+<img src='https://i.postimg.cc/YqTxYqSt/7-9-i-Pad-mini.png' />
 
 ## ↖ You can switch the branch to download the 3 ways of project.
 
