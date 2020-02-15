@@ -5,8 +5,8 @@
   "author": "Yokiijay <yokiijay@gmail.com> (https://yokiijay.github.io)",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack -w"
+    "build": "yarn run webpack",
+    "start": "yarn run webpack -w"
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
