@@ -5,11 +5,12 @@
   "author": "Yokiijay <yokiijay@gmail.com> (https://yokiijay.github.io)",
   "license": "MIT",
   "scripts": {
-    "build": "yarn run rollup -c",
-    "start": "yarn run rollup -c -w"
+    "build": "webpack",
+    "start": "webpack -w"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.27"
+    "@emotion/core": "^10.0.27",
+    "react": "^16.12.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -18,8 +19,12 @@
     "@babel/preset-react": "^7.8.3",
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@rollup/plugin-json": "^4.0.2",
+    "babel-loader": "^8.0.6",
     "babel-plugin-emotion": "^10.0.27",
     "rollup": "^1.31.1",
-    "rollup-plugin-babel": "^4.3.3"
+    "rollup-plugin-babel": "^4.3.3",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
   }
 }
