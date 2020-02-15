@@ -22,7 +22,7 @@ This branch has been implemented with rollup way, download it and cd in run `yar
 `yarn add rollup rollup-plugin-babel @babel/core @babel/preset-env @babel/preset-react @emotion/babel-preset-css-prop -D`
 > `@emotion/babel-preset-css-prop` is a babel preset we gonna use it later.
 
-## 3.rollup.config.js
+## 3. `rollup.config.js` & `.babelrc`
 create `rollup.config.js`
 ```js
 import babel from 'rollup-plugin-babel'
@@ -40,6 +40,18 @@ export default {
     })
   ],
   external: ['react', '@emotion/core'] // exclude 3rd libraries to bundle with
+}
+```
+
+`.babelrc`
+```json
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@emotion/babel-preset-css-prop",
+    "minify"
+  ]
 }
 ```
 
