@@ -11,5 +11,5 @@ export default {
       exclude: 'node_modules/**'
     })
   ],
-  external: ['react']
+  external: ['react', '@emotion/core']
 }
