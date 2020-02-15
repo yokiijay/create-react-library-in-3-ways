@@ -2,6 +2,8 @@
 
 This branch has been implemented with rollup way, download it and cd in run `yarn install`, then the output library should be in `lib/boundle.js`.
 
+**Remember to delete `node_modules/react` manually if you use local link test.**
+
 # Start from scratch
 
 
