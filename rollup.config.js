@@ -1,4 +1,6 @@
 import babel from 'rollup-plugin-babel'
+import { uglify } from 'rollup-plugin-uglify'
+
 
 export default {
   input: 'src/index.js',
@@ -9,7 +11,8 @@ export default {
   plugins: [
     babel({
       exclude: 'node_modules/**'
-    })
+    }),
+    uglify()
   ],
   external: ['react', '@emotion/core']
 }
