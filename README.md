@@ -1,4 +1,4 @@
-# <img style="margin-bottom: -10px" width='120px' src='https://webpack.js.org/e0b5805d423a4ec9473ee315250968b2.svg'/> create react library with Rollup.js
+# <img style="margin-bottom: -10px" width='120px' src='https://webpack.js.org/e0b5805d423a4ec9473ee315250968b2.svg'/> create react library with webpack.js
 
 This branch has been implemented with webpack way, download it and cd in run `yarn install && yarn build`, then the output library should be in `lib/boundle.js`. 
 
@@ -22,8 +22,8 @@ This branch has been implemented with webpack way, download it and cd in run `ya
 `yarn add webpack webpack-cli babel-lodaer @babel/core @babel/preset-env @babel/preset-react @emotion/babel-preset-css-prop -D`
 > `@emotion/babel-preset-css-prop` is a babel preset we gonna use it later.
 
-## 3.webpack.config.js
-create `rollup.config.js`
+## 3.`webpack.config.js` & `.babelrc`
+create `webpack.config.js`
 
 ```js
 const path = require('path')
@@ -52,7 +52,20 @@ module.exports = {
 }
 ```
 
-## 4.package.json
+`.babelrc`
+```json
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@emotion/babel-preset-css-prop",
+    "minify"
+  ]
+}
+
+```
+
+## 4. `package.json`
 edit `package.json`
 ```json
   "main": "./lib/bundle.js",
@@ -63,7 +76,7 @@ edit `package.json`
   },
 ```
 
-## 5.Create index.js
+## 5.Create `index.js`
 `src/index.js`
 ```js
 // Here is the entries of our components
