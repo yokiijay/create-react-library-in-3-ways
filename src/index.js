@@ -1,3 +1,3 @@
-// export { default as Button } from './Button'
+// Here is the entries of our components
 
-export { default as foo } from './foo'
+export { default as Button } from './Button'
