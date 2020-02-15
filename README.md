@@ -1,6 +1,6 @@
-# <img style="margin-bottom: -10px" width='120px' src='https://webpack.js.org/e0b5805d423a4ec9473ee315250968b2.svg'/> create react library with Rollup.js
+# <img style="margin-bottom: -16px" width='120px' src='https://www.babeljs.cn/img/babel.svg'/> create react library with Babel
 
-This branch has been implemented with webpack way, download it and cd in run `yarn install && yarn build`, then the output library should be in `lib/boundle.js`. 
+This branch has been implemented with babel way, download it and cd in run `yarn install && yarn build`, then the output library should be in `lib`. 
 
 **Remember to delete `node_modules/react` manually if you use local link test.**
 
@@ -19,51 +19,34 @@ This branch has been implemented with webpack way, download it and cd in run `ya
 
 `yarn add react @emotion/core`
 
-`yarn add webpack webpack-cli babel-lodaer @babel/core @babel/preset-env @babel/preset-react @emotion/babel-preset-css-prop -D`
+`yarn add @babel/core @babel/cli @babel/preset-env @babel/preset-react @emotion/babel-preset-css-prop -D`
 > `@emotion/babel-preset-css-prop` is a babel preset we gonna use it later.
 
-## 3.webpack.config.js
-create `rollup.config.js`
-
-```js
-const path = require('path')
-const nodeExternals = require('webpack-node-externals') // exclude 3rd libraries from bundle with
-
-module.exports = {
-  mode: 'production',
-  entry: './src/index.js',
-  output: {
-    path: path.join(__dirname, 'lib'),
-    filename: 'bundle.js',
-    libraryTarget: 'commonjs2',
-    // libraryTarget: 'umd',
-    // globalObject: 'this'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      }
-    ]
-  },
-  externals: [nodeExternals()],
+## 3. `.babelrc`
+```json
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@emotion/babel-preset-css-prop",
+    "minify"
+  ]
 }
 ```
 
-## 4.package.json
+
+## 4.`package.json`
 edit `package.json`
 ```json
-  "main": "./lib/bundle.js",
+  "main": "./lib/index.js",
 ...
   "scripts": {
-    "build": "yarn run webpack",
-    "start": "yarn run webpack -w"
+    "build": "yarn run babel src -d lib",
+    "start": "yarn run babel src -d lib -w"
   },
 ```
 
-## 5.Create index.js
+## 5.Create `index.js`
 `src/index.js`
 ```js
 // Here is the entries of our components
