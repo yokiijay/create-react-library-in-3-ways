@@ -1,6 +1,8 @@
-# <img style="margin-bottom: -10px" width='50px' src='https://www.rollupjs.com/assets/images/logo.svg'/> create react library with Rollup.js
+# <img style="margin-bottom: -10px" width='120px' src='https://webpack.js.org/e0b5805d423a4ec9473ee315250968b2.svg'/> create react library with Rollup.js
 
-This branch has been implemented with rollup way, download it and cd in run `yarn install`, then the output library should be in `lib/boundle.js`.
+This branch has been implemented with webpack way, download it and cd in run `yarn install && yarn build`, then the output library should be in `lib/boundle.js`. 
+
+**Remember to delete `node_modules/react` manually if you use local link test.**
 
 # Start from scratch
 
