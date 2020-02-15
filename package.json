@@ -1,7 +1,7 @@
 {
   "name": "my-react-library",
   "version": "1.0.0",
-  "main": "bundle.js",
+  "main": "./lib/bundle.js",
   "author": "Yokiijay <yokiijay@gmail.com> (https://yokiijay.github.io)",
   "license": "MIT",
   "scripts": {
